@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+
+function CurrentTime() {
+  // Get current date and time
+  const now = new Date();
+
+  // Format the date and time
+  const formattedDateTime = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
+
+  // Return JSX to display the formatted date and time
+  return (
+    <div>
+      <h2>Current Time and Date</h2>
+      <p>{formattedDateTime}</p>
+    </div>
+  );
+}
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Welcome to My Current Time App</h1>
       </header>
+      <CurrentTime />
     </div>
   );
 }
